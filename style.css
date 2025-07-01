@@ -1,0 +1,138 @@
+/* Logo y login link */
+header {
+  position: relative;
+  text-align: center;
+  background: linear-gradient(to right, #2d502c, #1ad948);
+  color: white;
+  padding: 40px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.login-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.login-link a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background: #ffffff33;
+  padding: 8px 14px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.login-link a:hover {
+  background: #ffffff55;
+}
+
+#menu-materias {
+  width: 28%;
+  background: #fefefe;
+  padding: 25px;
+  overflow-y: auto;
+  border-right: 2px solid #ddd;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#menu-materias h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #1ab948;
+  padding-bottom: 8px;
+}
+
+#buscador {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+#buscador:focus {
+  border-color: #1ab948;
+  outline: none;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.4);
+}
+
+.materia {
+  margin-bottom: 20px;
+  background-color: #ecf5fc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.materia:hover {
+  transform: scale(1.02);
+}
+
+.materia-btn {
+  width: 100%;
+  background-color: #1ab948;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.materia-btn:hover,
+.materia-btn.activo {
+  background-color: #1ab948;
+}
+
+.libros {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-left: 10px;
+  margin-top: 10px;
+  border-left: 3px solid #1ab948;
+}
+
+.materia-btn.activo + .libros {
+  padding-top: 10px;
+}
+
+.libros a {
+  display: block;
+  color: #2c3e50;
+  font-size: 15px;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.libros a:hover {
+  color: #1abc9c;
+  transform: translateX(6px);
+}
+
+.libros a i {
+  margin-right: 8px;
+  color: #1ab948;
+}

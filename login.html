@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar sesión - Biblioteca Digital</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="login-contenedor">
+    <h1><i class="fas fa-lock"></i> Iniciar sesión</h1>
+<form method="POST" action="login.php">
+       <input type="email" id="correo" name="correo" placeholder="Correo Institucional" required />
+<input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required />
+
+      <button type="submit" class="boton-login">Ingresar</button>
+    </form>
+    <p><a href="bienvenida.html" class="volver">Volver a la página de bienvenida</a></p>
+  </div>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const correo = document.getElementById("correo").value;
+      const contrasena = document.getElementById("contrasena").value;
+
+      fetch("login.php", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}`
+})
+
+      .then(response => response.text())
+      .then(data => {
+        if (data.trim() === "success") {
+          window.location.href = "index.php";
+        } else {
+          alert("Correo o contraseña incorrectos.");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
